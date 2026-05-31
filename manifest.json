@@ -1,0 +1,28 @@
+{
+  "name": "Presensi Terpadu NASAKU - SDN 1 Kucur",
+  "short_name": "Presensi NASAKU",
+  "description": "Sistem Presensi Digital Berbasis AI - SDN 1 Kucur, Islami Berprestasi Unggul dalam Karakter & Teknologi",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "fullscreen",
+  "orientation": "landscape",
+  "background_color": "#065f46",
+  "theme_color": "#065f46",
+  "lang": "id",
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["education", "productivity"],
+  "screenshots": []
+}

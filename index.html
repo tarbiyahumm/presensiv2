@@ -1219,7 +1219,19 @@
                         method: 'POST',
                         mode: 'no-cors',
                         headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify({ uid: id, nama: subject.nama, peran: subject.peran, kelas: subject.kelas })
+                        body: JSON.stringify({
+                            barcodeId : id,
+                            uid       : id,
+                            nama      : subject.nama,
+                            peran     : subject.peran,
+                            kelas     : subject.kelas,
+                            jam       : timeStr,
+                            waktu     : timeStr,
+                            tanggal   : today,
+                            status    : terlambat ? 'TERLAMBAT' : 'HADIR',
+                            tipe      : 'MASUK',
+                            timestamp : timestamp.toISOString()
+                        })
                     }).then(() => {
                         console.log("Data presensi berhasil disinkronkan ke Google Sheets Cloud.");
                     }).catch(err => console.error("Gagal sinkronisasi cloud:", err));

@@ -1156,6 +1156,11 @@
         }
 
         async function triggerAttendanceLogs(id) {
+            // Anti scan hantu: abaikan scan selama cooldown 3 detik
+            if (scanCooldown) return;
+            scanCooldown = true;
+            setTimeout(() => { scanCooldown = false; }, 3000);
+
             const master = fetchMasterDB();
             const logs = fetchLogDB();
             const subject = master[id];
@@ -1329,6 +1334,7 @@
         }
 
         let currentFacingMode = 'user';
+        let scanCooldown = false; // Anti scan hantu: cooldown 3 detik
 
         function initWebcam() {
             const video       = document.getElementById('video-preview');
